@@ -1,0 +1,49 @@
+:root {
+    --sidebar-height: 195px;
+}
+
+@media (max-width: 767px) {
+
+    /* ======================================================================
+SCREEN
+====================================================================== */
+    #screen {
+        /* display: flex; */
+        /* width: 100vw; */
+        /* overflow: hidden; */
+        /* min-height: 100vh; */
+        flex-direction: column;
+    }
+
+
+    /* ======================================================================
+SIDEBAR
+====================================================================== */
+    #screen .sidebar {
+        padding: 1rem;
+        max-width: 100%;
+        background: var(--bg-p);
+        color: #e5e5e5;
+    }
+
+    .sidebar #cat-container {
+        flex-direction: row;
+        overflow: scroll;
+    }
+
+    .sidebar .cat-name {
+        min-width: fit-content;
+        flex-grow: 1;
+    }
+
+
+
+    /* ======================================================================
+DISPLAY
+====================================================================== */
+    #screen .display {
+        padding: 1rem;
+        max-height: calc(100vh - var(--sidebar-height));
+    }
+
+}

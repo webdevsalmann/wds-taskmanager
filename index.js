@@ -77,7 +77,6 @@ class DataManager {
 
     addTask(catId, taskDesc) {
         const selectedCategory = this.datas.find(item => item.catId == catId);
-        // console.log(catId, taskDesc, selectedCategory)
         if (selectedCategory) {
             selectedCategory.tasks.push(new Task(taskDesc));
             this.saveToLocalStorage();
@@ -141,6 +140,7 @@ class DataManager {
             categoryName.textContent = item.catName;
 
             catElem.appendChild(categoryName);
+
             if (item.catName !== "My Tasks") {
                 const btnWrapper = document.createElement('div');
                 btnWrapper.classList.add("btn-wrapper");
@@ -161,13 +161,20 @@ class DataManager {
                 deleteButton.classList.add("btn", "btn-outline");
                 deleteButton.textContent = 'Delete';
                 deleteButton.addEventListener('click', () => this.deleteCategory(item.catId));
+
                 btnBox.appendChild(editButton);
                 btnBox.appendChild(deleteButton);
+
                 btnWrapper.appendChild(checkbox);
                 btnWrapper.appendChild(btnBox);
+
                 catElem.appendChild(btnWrapper);
             }
+            const catElemDivider = document.createElement('hr');
+            catElemDivider.classList.add("cat-divider");
+
             catContainer.appendChild(catElem);
+            catContainer.appendChild(catElemDivider);
         });
     } // CHECKED
 
@@ -338,7 +345,19 @@ document.getElementById("task-input").addEventListener("keydown", (e) => {
 }) // CHECKED
 
 
+function calcAndSetSidebarHeight() {
+    var sidebar = document.querySelector('#sidebar');
+    var windowWidth = window.innerWidth;
+    if (windowWidth < 767) {
+        var sidebarHeight = sidebar.clientHeight;
+        sidebar.style.setProperty('--sidebar-height', sidebarHeight + 'px');
+    } else {
+        sidebar.style.setProperty('--sidebar-height', '0');
+    }
+} window.addEventListener('resize', calcAndSetSidebarHeight);
+
 // ================================== INITIAL CALL =====================================
+calcAndSetSidebarHeight();
 const dm = new DataManager(); // CHECKED
 dm.renderCategory(); // CHECKED
 setFirstCatActive() // CHECKED

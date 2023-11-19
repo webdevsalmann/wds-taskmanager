@@ -111,11 +111,6 @@ INPUT FIELD BOX
   box-shadow: var(--shadow-s);
 }
 
-
-
-
-
-
 /* ======================================================================
 SCREEN
 ====================================================================== */
@@ -172,16 +167,34 @@ SIDEBAR
   padding: .4rem .5rem;
   border-radius: 2px;
   text-transform: capitalize;
+  gap: .5rem;
+}
+
+.sidebar #cat-container .cat-divider:last-child {
+  opacity: 0;
+}
+
+.sidebar #cat-container .cat-name>span {
+  pointer-events: none;
 }
 
 .sidebar #cat-container .cat-name:hover {
   background: var(--bg);
-  color: var(--dark);
+  color: var(--bg-p);
+
+}
+
+.sidebar #cat-container .cat-name.active:hover {
+  background: var(--bg);
+  color: var(--bg-p);
 }
 
 .sidebar #cat-container .cat-name.active {
-  outline: 1px solid var(--bg);
-  outline-offset: -1px;
+  /* outline: 1px solid var(--bg); */
+  /* outline-offset: -1px; */
+  border-bottom: 2px solid var(--bg);
+  font-weight: bold;
+  color: var(--bg);
 }
 
 /* ======================================================================
@@ -220,6 +233,7 @@ DISPLAY
   text-transform: capitalize;
   flex-grow: 1;
 }
+
 .display .task-counter {
   padding: .5rem 1rem;
   color: var(--bg-light);

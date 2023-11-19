@@ -1,0 +1,264 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--inter);
+  background-color: var(--bg);
+}
+
+
+/* ===========================
+EDIT, DELETE DROPDOWN BUTTON INTERACTION
+=========================== */
+
+.display .task .btn-more,
+.sidebar .cat-name .btn-more {
+  padding: 4px;
+  box-shadow: var(--shadow-s);
+  z-index: 9;
+}
+
+.display .task .btn-wrapper,
+.sidebar .cat-name .btn-wrapper {
+  position: relative;
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: var(--bg-light);
+  border-radius: 2px;
+}
+
+.display .task .btn-wrapper::after,
+.sidebar .cat-name .btn-wrapper::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(./assets/three-dots.svg) no-repeat center;
+  color: var(--dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  pointer-events: none;
+}
+
+.display .task .cb,
+.sidebar .cat-name .cb {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.display .task .cb~.btn-box,
+.sidebar .cat-name .cb~.btn-box {
+  display: none;
+  padding: .5rem;
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 8px);
+  background: var(--bg-light);
+  border-radius: 4px;
+  gap: 1rem;
+  box-shadow: var(--shadow-p);
+  z-index: 999;
+}
+
+.display .task .cb:checked~.btn-box,
+.sidebar .cat-name .cb:checked~.btn-box {
+  display: flex;
+}
+
+.display .task .btn-box .btn-outline,
+.sidebar .cat-name .btn-box .btn-outline {
+  padding: 2px 4px;
+  font-size: .85rem;
+}
+
+/* ===============================
+dropdown Complete 
+=============================== */
+
+/* ===============================
+INPUT FIELD BOX
+=============================== */
+.display .input-box,
+.sidebar .input-box {
+  margin: .5rem 0;
+  display: inline-flex;
+  width: 100%;
+  gap: .5rem;
+  flex-wrap: nowrap;
+}
+
+.display .input-box input,
+.sidebar .input-box input {
+  padding: .5rem 1rem;
+  font-size: 1rem;
+  width: 100%;
+  box-shadow: var(--shadow-s);
+  border-radius: 2px;
+}
+
+.display .input-box .btn,
+.sidebar .input-box .btn {
+  padding: .5rem;
+  font-size: 1rem;
+  border-radius: 2px;
+  box-shadow: var(--shadow-s);
+}
+
+
+
+
+
+
+/* ======================================================================
+SCREEN
+====================================================================== */
+#screen {
+  display: flex;
+  width: 100vw;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+/* ======================================================================
+SIDEBAR
+====================================================================== */
+#screen .sidebar {
+  padding: 1rem;
+  max-width: 18rem;
+  background: var(--bg-p);
+  color: #e5e5e5;
+}
+
+.sidebar hr {
+  color: #fafafa;
+  border-radius: 1rem;
+  opacity: 0.2;
+}
+
+.sidebar .logo-box {
+  margin-bottom: .5rem;
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.sidebar .logo-box .img-box {
+  width: 3rem;
+  height: 3rem;
+}
+
+.sidebar .logo-box .name {
+  font-size: var(--fs-h6);
+  font-weight: bold;
+  font-family: var(--gabar);
+}
+
+.sidebar #cat-container {
+  padding: .5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sidebar #cat-container .cat-name {
+  position: relative;
+  padding: .4rem .5rem;
+  border-radius: 2px;
+  text-transform: capitalize;
+}
+
+.sidebar #cat-container .cat-name:hover {
+  background: var(--bg);
+  color: var(--dark);
+}
+
+.sidebar #cat-container .cat-name.active {
+  outline: 1px solid var(--bg);
+  outline-offset: -1px;
+}
+
+/* ======================================================================
+DISPLAY
+====================================================================== */
+#screen .display {
+  padding: 2rem;
+  flex: 1 1 0%;
+  width: 100%;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.display #tasks-container {
+  padding-bottom: 1rem;
+  flex-grow: 1;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.display .tasks-header {
+  margin-bottom: .5rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: .5rem;
+  align-items: baseline;
+}
+
+.display .heading {
+  color: var(--bg-p);
+  width: fit-content;
+  text-transform: capitalize;
+  flex-grow: 1;
+}
+.display .task-counter {
+  padding: .5rem 1rem;
+  color: var(--bg-light);
+  background: var(--bg-p);
+  width: fit-content;
+  border-radius: 4px;
+}
+
+.display .task {
+  position: relative;
+  padding: .5rem 1rem;
+  border-radius: 2px;
+  background: var(--bg-light);
+  gap: 1rem;
+}
+
+.display .task .indicator {
+  accent-color: var(--p);
+}
+
+.display .task .task-desc {
+  flex-grow: 1;
+}
+
+.display .task.complete .task-desc {
+  text-decoration: line-through;
+}
+
+.display .task .cb~.btn-box {
+  bottom: calc(-170%);
+}
+
+.display .input-box textarea {
+  padding: .5rem 1rem;
+  height: 2rem;
+  max-height: 10rem;
+  font-size: 1rem;
+  width: 100%;
+  box-shadow: var(--shadow-s);
+  border-radius: 2px;
+  resize: none;
+}

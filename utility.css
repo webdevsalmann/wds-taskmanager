@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700;800;900&display=swap');
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --clr-50: #fff1f2;
+    --clr-100: #ffe4e6;
+    --clr-200: #fecdd3;
+    --clr-300: #fda4af;
+    --clr-400: #fb7185;
+    --clr-500: #f43f5e;
+    --clr-600: #e11d48;
+    --clr-700: #be123c;
+    --clr-800: #9f1239;
+    --clr-900: #881337;
+    --clr-950: #4c0519;
+
+    --clr-n-50: #fafafa;
+    --clr-n-100: #f5f5f5;
+    --clr-n-200: #e5e5e5;
+    --clr-n-300: #d4d4d4;
+    --clr-n-400: #a3a3a3;
+    --clr-n-500: #737373;
+    --clr-n-600: #525252;
+    --clr-n-700: #404040;
+    --clr-n-800: #262626;
+    --clr-n-900: #171717;
+    --clr-n-950: #0a0a0a;
+
+    --danger: #ed252f;
+    --danger-light: #ff9595;
+    --danger-dark: #920000;
+    --primary: #0365FF;
+    --primary-light: #8F95FF;
+    --primary-dark: #000bab;
+    --safe: #24e138;
+    --safe-light: #bbffcc;
+    --safe-dark: #004800;
+    --info: #e6ea0c;
+    --info-light: #feffbf;
+    --info-dark: #656200;
+    --focus: #06b6d4;
+    --focus-light: #3edbf7;
+    --focus-dark: #037d93;
+
+    /* theme colour  */
+    --white: var(--clr-n-50);
+    --black: var(--clr-n-950);
+    --light: var(--clr-n-200);
+    --dark: var(--clr-n-800);
+
+    /* Text */
+    --text-balance: var(--clr-n-700);
+
+    /* Background */
+    --bg: var(--clr-50);
+    --bg-p: var(--clr-950);
+    --bg-light: var(--clr-100);
+    --bg-dark: var(--clr-900);
+    --p: var(--clr-400);
+
+
+    /* Google Fonts  */
+    --gabar: 'Gabarito', sans-serif;
+    --inter: 'Inter', sans-serif;
+    --lora: 'Lora', sans-serif;
+    --sans: sans-serif;
+
+    /* Text Sizes  */
+    --fs-p: clamp(14px, 2vw, 16px);
+    --fs-s: clamp(12px, 2vw, 14px);
+    --fs-t: 10px;
+    --fs-l: clamp(16px, 2vw, 18px);
+    --fs-xl: clamp(18px, 2vw, 20px);
+    --fs-xxl: clamp(20px, 2vw, 22px);
+
+    --fs-h1: clamp(2.5rem, 5vw, 3rem);
+    --fs-h2: clamp(2rem, 5vw, 2.5rem);
+    --fs-h3: clamp(1.7rem, 5vw, 2rem);
+    --fs-h4: clamp(1.3rem, 5vw, 1.7rem);
+    --fs-h5: clamp(1rem, 5vw, 1.3rem);
+    --fs-h6: clamp(0.8rem, 5vw, 1rem);
+
+    --shadow-p: 0 0 6px #30303050;
+    --shadow-s: #3c40434d 0px 1px 2px 0px, #3c404326 0px 1px 3px 1px;
+
+    --size-p: 4px;
+    --size-s: 8px;
+    --size-t: 12px;
+    --size-q: 16px;
+
+    --btn-pad-p: .5rem 1rem;
+    --btn-pad-p: 4px 8px;
+}
+
+/* ===============================================
+Reset Default
+=============================================== */
+html {
+    scroll-behavior: smooth;
+}
+
+h1 {
+    font-size: 3rem;
+    font-size: var(--fs-h1);
+
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-size: var(--fs-h2);
+}
+
+h3 {
+    font-size: 2rem;
+    font-size: var(--fs-h3);
+}
+
+h4 {
+    font-size: 1.7rem;
+    font-size: var(--fs-h4);
+}
+
+h5 {
+    font-size: 1.3rem;
+    font-size: var(--fs-h5);
+}
+
+h6 {
+    font-size: 1rem;
+    font-size: var(--fs-h6);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--gabar);
+}
+
+p {
+    font-family: var(--inter);
+    color: var(--text-balance);
+    font-size: var(--font-size-p);
+    font-weight: 400;
+}
+
+button,
+input,
+textarea {
+    position: relative;
+    outline: transparent;
+    border: transparent;
+    font-family: var(--inter);
+    font-weight: 300;
+    font-size: 1rem;
+}
+
+button:focus,
+input:focus,
+textarea:focus {
+    outline: 2px solid var(--p);
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    outline: transparent;
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .5s ease;
+}
+
+/* ===========================================================================
+      COMMON CLASSES
+      =========================================================================== */
+.clr-p {
+    color: var(--p);
+}
+
+.flex-center,
+.img-box,
+.icon-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ===========================================================================
+  BUTTON
+  =========================================================================== */
+.btn {
+    padding: .5rem 1rem;
+    text-transform: capitalize;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    border: transparent;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition:
+        transform .1s ease,
+        font-weight .1s ease,
+        letter-spacing .1s ease,
+        outline-offset .1s ease,
+        background .1s ease,
+        color .1s ease;
+}
+
+.btn:focus {
+    outline: 2px solid var(--p);
+}
+
+.btn-p {
+    background-image: linear-gradient(120deg, var(--clr-400) 0%, var(--clr-500) 100%);
+}
+
+.btn-p:hover {
+    background-image: linear-gradient(120deg, var(--clr-500) 0%, var(--clr-400) 100%);
+}
+
+.btn-solid {
+    background-image: linear-gradient(120deg, var(--clr-400) 0%, var(--clr-500) 100%);
+}
+
+.btn-soft {
+    background: var(--clr-300);
+}
+
+.btn-soft:hover {
+    background: var(--clr-100);
+}
+
+.btn-outline {
+    outline: 2px solid var(--p);
+    outline-offset: -2px;
+    background: transparent;
+}
+
+.btn-outline:hover {
+    background: var(--clr-300);
+}
+
+.btn-ghost {
+    background: transparent;
+}
+
+.btn-ghost:hover {
+    background: var(--clr-200);
+}
+
+.btn-link {
+    /* @apply btn text-blue-400 hover:text-blue-300 hover:underline; */
+    background: transparent;
+    color: var(--primary);
+}
+
+.btn-link:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+.btn-ghost-link {
+    background: transparent;
+}
+
+.btn-ghost-link:hover {
+    background: var(--clr-200);
+    color: var(--clr-800)
+}
+
+/* .btn-danger {
+    @apply btn bg-danger text-white hover:bg-danger-dark focus:outline-none focus:ring-2 focus:ring-danger focus:ring-offset-2 focus:ring-offset-gray-200;
+} */
+
+/* .btn-submit {
+    @apply btn text-neutral-100 bg-blue-600 hover:bg-blue-700;
+} */
+
+.btn-danger {
+    background: var(--danger-dark);
+    color: var(--light);
+}
+
+.btn-danger:hover {
+    background: var(--danger);
+}
+
+/* ===================================================
+[[[[[[[[[[[[[[[[[[[[[Media-Quary]]]]]]]]]]]]]]]]]]]]]
+=================================================== */
+/*  mobile LandScape / Tablet devices */
+@media (max-width: 767px) {}
+
+/*  mobile LandScape / Tablet devices  to Small-Screen Desktop */
+@media (min-width: 768px) and (max-width: 1023px) {}
+
+/*  Small-Screen Desktop to Large Desktop Device*/
+@media (min-width: 1024px) and (max-width: 1439px) {}
+
+/*  For Large Desktop Device*/
+@media (min-width: 1440px) {}

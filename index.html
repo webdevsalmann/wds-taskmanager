@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WDS Task Manager - manage day to day task easy in easy and efficient way</title>
+  <link rel="icon" type="image/svg+xml" href="./assets/logo.svg">
+  <link rel="stylesheet" href="./utility.css">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+  <div id="screen">
+
+    <div class="sidebar">
+      <div class="logo-box">
+        <div class="img-box"><img src="./assets/logo.svg" alt=""></div>
+        <div class="name">WDS Task Manager</div>
+      </div>
+      <hr>
+      <div class="input-box flex-between">
+        <input type="text" placeholder="Add New Category" id="cat-input">
+        <button class="btn btn-soft" onclick="addCat()">Add</button>
+      </div>
+      <hr>
+      <ul id="cat-container"></ul>
+    </div>
+
+    <div class="display">
+      <div id="tasks-header" class="tasks-header"></div>
+
+      <ul id="tasks-container"></ul>
+
+      <div class="input-box flex-between">
+        <input type="text" id="task-input" placeholder="Add task..." />
+        <button class="btn btn-soft" onclick="addTask()">Add</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./index.js"></script>
+  <!-- <script src="./sample.js"></script> -->
+</body>
+
+</html>
